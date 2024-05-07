@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: sunborn;
+    src: url(../font/sunborn-sans-one.otf);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0dbb0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sunborn;
+}
+
+#create {
+    width: 95vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    border-radius: 0 16px 16px 0;
+    background-color: #FAF0DC;
+    border: 10px solid #DBCEB4;
+    border-left: none;
+    /*animation: slideAnim 1s ease-out;*/
+    flex-direction: column;
+}
+
+@keyframes slideAnim {
+    from {
+        left: -100vw;
+    } to {
+        left: 0;
+    }
+}
+
+#createForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 30%;
+    height: 40vh;
+}
+
+#createForm input {
+    background-color: #f0dbb0;
+    border: none;
+    border-radius: 4px;
+    padding: 0 10px;
+}
