@@ -18,7 +18,7 @@ body {
     font-family: sunborn;
 }
 
-#create {
+#create, #update {
     width: 95vw;
     height: 90vh;
     display: flex;
@@ -32,6 +32,14 @@ body {
     border-left: none;
     /*animation: slideAnim 1s ease-out;*/
     flex-direction: column;
+    color: #4E6A8F;
+}
+
+#update {
+    background-color: #EFB67F;
+    border: 10px solid #DD9C5E;
+    display: flex;
+
 }
 
 @keyframes slideAnim {
@@ -42,17 +50,104 @@ body {
     }
 }
 
-#createForm {
+#updateForm, #oldData{
     display: grid;
-    grid-template-columns: 1fr;
     gap: 15px;
-    width: 30%;
-    height: 40vh;
+    width: 50%;
+    height: 30vh;
 }
 
-#createForm input {
+#updateForm input, #oldData div{
+    height: 35px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#createForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 50%;
+    height: 30vh;
+    position: relative;
+}
+
+#createForm input,
+#createForm .inpStyle,
+#updateForm input,
+#updateForm .inpStyle {
     background-color: #f0dbb0;
     border: none;
-    border-radius: 4px;
+    border-radius: 7px;
     padding: 0 10px;
+    position: relative;
+}
+
+#createForm input[type="submit"] {
+    position: absolute;
+    width: 50%;
+    border: 2px solid #4E6A8F;
+    box-sizing: border-box;
+    height: 50px;
+    bottom: -70px;
+    left: calc(50% - 25%);
+    background-color: transparent;
+
+}
+
+#createForm input::placeholder,
+#updateForm input::placeholder {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4E6A8F;
+}
+
+#createForm .inpStyle,
+#updateForm .inpStyle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4E6A8F;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.opContainer {
+    background-color: #f0dbb0bb;
+    border-radius: 8px;
+    position: absolute;
+    top: 105%;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    animation-name: popup;
+    animation-duration: .2s;
+    animation-timing-function: linear;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        top: 70%;
+    } to {
+        opacity: 1;
+        top: 105%;
+    }
+}
+
+
+.opContainer .option {
+    width: 100%;
+    height: 30px;
+    background-color: beige;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }

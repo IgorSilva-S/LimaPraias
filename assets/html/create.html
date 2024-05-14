@@ -20,18 +20,16 @@
 
             <input type="text" id="cpfInp" placeholder="CPF">
 
-            <label for="dateInp">Data de Nascimento:</label>
-            <input type="date" id="dateInp" required>
+            <input type="text" id="dateInp" placeholder="Data de nascimento" required>
 
-            <!--<label for="manInp">Homem</label>
-            <input type="radio" id="manInp" name="gender" value="Homem"> <br>
-            
-            <label for="womanInp">Mulher</label>
-            <input type="radio" id="womanInp" name="gender" value="Mulher"> <br>
-            
-            
-            <label for="notSay">Preferiu não dizer</label>
-            <input type="radio" id="notSay" name="gender" value="Preferiu não dizer"> <br>-->
+            <div class="inpStyle" id="genInp">
+              <p id="boxValue">Gênero</p>
+              <div class="opContainer" id="optionContainer">
+                <div class="option">Masculino</div>
+                <div class="option">Feminino</div>
+                <div class="option">Preferiu não dizer</div>
+              </div>
+            </div>
 
             <input type="text" id="cepInp" placeholder="CEP"> 
             
@@ -42,4 +40,17 @@
       </main>
       <footer></footer>
   </body>
+  
+  <script>
+    let isGenPopup = false
+    document.getElementById('genInp').addEventListener('click', () => {
+      if (!isGenPopup) {
+        document.getElementById('optionContainer').style.display = 'flex'
+        isGenPopup = true
+      } else {
+        document.getElementById('optionContainer').removeAttribute('style')
+        isGenPopup = false
+      }
+    })
+  </script>
 </html>

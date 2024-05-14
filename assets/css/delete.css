@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: sunborn;
+    src: url(../font/sunborn-sans-one.otf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: sunborn;
+    src: url(../font/sunborn-sans-one.otf);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0dbb0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sunborn;
+}
+
+#Delete {
+    width: 95vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    border-radius: 0 16px 16px 0;
+    background-color: #D99477;
+    border: 6px solid #BF7D61;
+    border-left: none;
+    /*animation: slideAnim 1s ease-out;*/
+    flex-direction: column;
+}
+

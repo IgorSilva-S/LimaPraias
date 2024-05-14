@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: sunborn;
+  src: url(../font/sunborn-sans-one.otf);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0dbb0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sunborn;
+}
+
+#update {
+    width: 95vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    border-radius: 0 16px 16px 0;
+    background-color: #EFB67F;
+    border: 10px solid #DD9C5E;
+    border-left: none;
+    flex-direction: column;
+}
+
+#updateForm, #oldData {
+  display: grid;
+  gap: 15px;
+  width: 50%;
+  height: 30vh;
+}
+
+#updateForm input, #oldData div {
+  height: 35px;
+  text-align: center;
+  font-size: 15px;
+}
+
+#updateForm input, #updateForm .inpStyle {
+  background-color: #f0dbb0;
+  border: none;
+  border-radius: 7px;
+  padding: 0 10px;
+  position: relative;
+}
+
+#updateForm input::placeholder, #oldData div {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #666;
+}
+
+#updateForm .inpStyle {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #666;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
