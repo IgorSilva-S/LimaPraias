@@ -112,7 +112,7 @@ body {
 
 
 .opContainer {
-    background-color: #f0dbb0bb;
+    background-color: #f0dbb0;
     border-radius: 8px;
     position: absolute;
     top: 105%;
@@ -150,4 +150,6 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    border: none;
+    color: #4E6A8F;
 }
