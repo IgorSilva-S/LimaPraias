@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int        @id @default(autoincrement())
+  fullName     String
+  phone        String
+  email        String     @db.TinyText
+  birthDate    DateTime   @db.Date
+  registerDate DateTime   @default(now())
+  cep          String?    @db.VarChar(8)
+  password     String
+  cpf          String     @db.VarChar(12)
+  payments     Payments[]
+  rent         Rent[]
+}
+
+model Payments {
+  id             Int        @id
+  transationType Transation
+  actualData     DateTime   @default(now()) @db.Timestamp(3)
+  userPayment    User       @relation(fields: [userId], references: [id])
+  userId         Int
+  rent           Rent[]
+}
+
+model Product {
+  id        Int     @id
+  type      String
+  value     Float
+  available Boolean
+  number    Int
+  rent      Rent[]
+}
+
+model Rent {
+  id         Int      @id
+  user       User     @relation(fields: [userId], references: [id])
+  userId     Int
+  product    Product  @relation(fields: [productId], references: [id])
+  productId  Int
+  payment    Payments @relation(fields: [paymentId], references: [id])
+  paymentId  Int
+  rentDate   DateTime @db.Date
+  returnDate DateTime @db.Date
+  value      Float
+}
+
+enum Transation {
+  Credito
+  Debito
+  Dinheiro
+  Pix
+}
