@@ -1,0 +1,82 @@
+body {
+  background-color: #f0dbb0;
+}
+
+.title {
+    font-size: 23px;
+}
+
+.SearchSpace {
+  background-color: #faf0dc;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+}
+
+form h2 {
+    font-size: 28px;
+}
+
+input {
+  border: none;
+  border-radius: 10px;
+  padding: 6px;
+  font-family: 'Gliker';
+  margin-left: 10px;
+  padding-left: 10px;
+  width: 44vw;
+  height: 40px;
+}
+
+input:focus {
+    border: 3px solid #e1cb9c;
+    outline: none;
+}
+
+#searchButton button {
+  border: none;
+  font-size: 32px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -15px;
+}
+
+.responseContent {
+  display: flex;
+  flex-direction: row;
+  text-align: start;
+  margin-top: 30px;
+}
+
+h3 {
+  background-color: #f0dbb0;
+  margin: 8px;
+  border-radius: 8px;
+  font-family: 'Gliker';
+  padding: 10px;
+  width: 25vw;
+  padding-left: 15px;
+}
+
+.column1,
+.column2{
+  display: flex;
+  flex-direction: column;
+}

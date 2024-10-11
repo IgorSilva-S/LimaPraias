@@ -1,5 +1,5 @@
 import React from "react";
-import "./create.css";
+import "./create.css"; 
 
 let isGenPopup = false
 function openGen() {
@@ -56,18 +56,18 @@ export default function Create() {
     <main id="create">
       <h1>Criar Usuário</h1>
       <form id="createForm" action="">
-        <input type="text" id="nameInp" placeholder="Nome" required />
+        <input type="text" id="nameInp" placeholder="Nome:" required autoComplete="off"/>
 
-        <input type="email" id="emailInp" placeholder="E-Mail" required />
+        <input type="email" id="emailInp" placeholder="E-Mail:" required autoComplete="off" />
 
-        <input type="phone" id="phoneInp" placeholder="Telefone" required />
+        <input type="phone" id="phoneInp" placeholder="Telefone:" required autoComplete="off" />
 
-        <input type="text" id="cpfInp" placeholder="CPF" onInput={cpfOrder}/>
+        <input type="text" id="cpfInp" placeholder="CPF:" onInput={cpfOrder} autoComplete="off"/>
 
-        <input type="text" id="dateInp" placeholder="Data de nascimento" required onInput={dateForm}/>
+        <input type="text" id="dateInp" placeholder="Data de nascimento:" required onInput={dateForm} autoComplete="off"/>
 
         <div className="inpStyle" id="genInp" onClick={openGen}>
-          <p id="boxValue">Gênero</p>
+          <p id="boxValue">Gênero:</p> 
           <div className="opContainer" id="optionContainer">
             <button className="option">Masculino</button>
             <button className="option">Feminino</button>
@@ -75,9 +75,9 @@ export default function Create() {
           </div>
         </div>
 
-        <input type="text" id="cepInp" placeholder="CEP" onInput={cepForm}/>
+        <input type="text" id="cepInp" placeholder="CEP:" onInput={cepForm} autoComplete="off"/>
 
-        <input type="text" id="numberInp" placeholder="Número da casa" onInput={numForm}/>
+        <input type="text" id="numberInp" placeholder="Número da casa:" onInput={numForm} autoComplete="off"/>
 
         <input type="submit" value="Criar usuário" />
       </form>
