@@ -1,9 +1,11 @@
 import React from "react"
 import './style.css'
+import {useNavigate} from "react-router-dom";
 
 export default function SideBar() {
+    const navigate = useNavigate();
     function changePage(name) {
-        console.log('a')
+        navigate(`/${name}`); 
     }
     return (
         <div className="sideBar">

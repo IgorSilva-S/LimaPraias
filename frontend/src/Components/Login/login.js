@@ -1,11 +1,12 @@
 import React from "react";
 import "./login.css";
+import logo from '../../assets/img/logo_lima.png';
 
 export default function Login() {
   return (
     <main id="login">
       <div className="logo">
-        <img src="#" alt="PraiApoio"/>
+        <img src={logo} alt="logo" />
         <h1>Bem Vindo!</h1>
         <h3>FAVOR FAÇA LOGIN PARA ACESSAR A ÁREA DO FUNCIONÁRIO.</h3>
       </div>
