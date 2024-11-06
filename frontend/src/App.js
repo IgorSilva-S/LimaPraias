@@ -8,14 +8,6 @@ import Login from './Components/Login/login';
 function App() {
   return (
     <>
-      <Router>
-        <Routes>
-          <Route exact path="/" component={Create} />
-          <Route path="/update" component={Login} />
-        </Routes>
-      </Router>
-      <SideBar/>
-      <Create/>
     </>
   );
 }

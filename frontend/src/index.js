@@ -14,8 +14,7 @@ import SideBar from './Components/SideBar/index'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
-    errorElement: <ErrorPage />,
+    element: (<SideBar/>,<Create/>)
   },
   {
     path: "/Create",
