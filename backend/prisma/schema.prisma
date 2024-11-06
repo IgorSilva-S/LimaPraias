@@ -22,7 +22,7 @@ model User {
   registerDate DateTime   @default(now())
   cep          String?    @db.VarChar(8)
   password     String
-  cpf          String     @db.VarChar(12)
+  cpf          String     @db.VarChar(11) @unique
   payments     Payments[]
   rent         Rent[]
 }

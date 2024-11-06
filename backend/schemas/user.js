@@ -1,13 +1,13 @@
-const { z } = require('zod')
+const { z } = require("zod");
 
 const userSchema = z.object({
-    fullName: z.string().min(1),
-    phone: z.string().max(14),
-    email: z.string().email(),
-    birthDate: z.string(),
-    cep: z.string().max(8).optional(),
-    password: z.string().min(1),
-    cpf: z.string().max(11)
-})
+  fullName: z.string().min(1),
+  password: z.string().min(6),
+  email: z.string().email(),
+  phone: z.string(),
+  birthDate: z.string().optional(), 
+  cep: z.string().max(8),
+  cpf: z.string().max(11),
+});
 
-module.exports = userSchema
+module.exports = userSchema;

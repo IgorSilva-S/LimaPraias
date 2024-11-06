@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: sunborn;
-  src: url(../font/sunborn-sans-one.otf);
+  src: url(../../assets/font/Sunborn-SansOne.otf);
 }
 
 * {
@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: sunborn;
-  src: url(../font/sunborn-sans-one.otf);
+  src: url(../../assets/font/Sunborn-SansOne.otf);
 }
 
 body {
