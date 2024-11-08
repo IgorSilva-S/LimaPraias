@@ -1,0 +1,39 @@
+
+#logologin{
+  width: 22%;
+  margin-left: 39%;
+  margin-top: 25%;
+  margin-bottom: -2.3%;
+}
+
+#containertexto{
+  background-color: #faf0dc;
+  width: 45%;
+  height: 90%;
+  margin-left: 6%;
+  position: absolute;
+}
+
+#login{
+  background-color: #efb67f;
+  width: 96.5%;
+  height: 89vh;
+  margin-top: 2.5%;
+  border-top-right-radius: 30px;  
+  border-bottom-right-radius: 30px; 
+}
+
+#contentid{
+  margin-left: 60%;
+}
+
+.h1login{
+  color: #4e6a8f;
+  font-family: sunborn;
+  font-size: 450%;
+}
+
+#bemvindo{
+  margin-left: 25%;
+}
+
