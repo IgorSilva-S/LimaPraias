@@ -1,5 +1,5 @@
 /*ALERTA: Falta dividir esse CSS!*/
-* {
+/* * {
   padding: 0;
   margin: 0;
 }
@@ -7,13 +7,13 @@
 @font-face {
   font-family: sunborn;
   src: url(../../assets/font/Sunborn-SansOne.otf);
-}
+} */
 
 .material-symbols-outlined.a {
   font-size: 30px;
 }
 
-body {
+/* body {
   width: 100vw;
   height: 100vh;
   background-color: #f0dbb0;
@@ -21,7 +21,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: sunborn;
-}
+} */
 
 #update {
   width: 95vw;

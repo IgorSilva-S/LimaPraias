@@ -1,32 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-
-@font-face {
-  font-family: sunborn;
-  src: url(../../assets/font/Sunborn-SansOne.otf);
-}
-
-* {
-  padding: 0;
-  margin: 0;
-}
-
-@font-face {
-  font-family: sunborn;
-  src: url(../../assets/font/Sunborn-SansOne.otf);
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  background-color: #f0dbb0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: sunborn;
-}
 
 #Delete {
   width: 95vw;
