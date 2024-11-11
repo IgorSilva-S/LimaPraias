@@ -16,7 +16,10 @@ router.post('/register', async (req, res) => {
   
   // Validate the request body
   try {
-    const parseData = userSchema.parse(req.body);
+    console.log(req.body)
+    const parseData = 
+    
+    console.log(parseData)
     const isSameCpf = await prisma.user.findUnique({
       where: {
         cpf: parseData.cpf
@@ -50,6 +53,29 @@ router.post('/register', async (req, res) => {
   } catch (error) {
     res.status(400).json({ error: error.message })
   }
+})
+
+router.patch('update/:id', async(req, res, next) => {
+  const userId = req.user.userId;
+  const payload = req.body;
+
+  const user = await prisma.user.findUnique({
+    where: {id: userId},
+  })
+
+  if (!user) {
+    return res.status(404).json({ message: 'Not Found'})
+  }
+
+  const updateUser = await prisma.user.update({
+    where: {id: userId},
+    data: { ...payload},
+  })
+
+  return res.status(200).json({
+    message: 'User Updated',
+    data: { user: updatedUser },
+  })
 })
 
 module.exports = router;
