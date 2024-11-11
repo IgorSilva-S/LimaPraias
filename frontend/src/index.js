@@ -14,27 +14,57 @@ import SideBar from './Components/SideBar/index'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (<SideBar/>,<Create/>)
+    element: (
+      <>
+        <SideBar />
+        <Login />
+      </>
+    )
   },
   {
     path: "/Create",
-    element: <Create/>,
+    element: (
+      <>
+        <SideBar />
+        <Create />
+      </>
+    )
   },
   {
     path: "/Delete",
-    element: <Delete/>,
+    element: (
+      <>
+        <SideBar />
+        <Delete />
+      </>
+    )
   },
   {
     path: "/Login",
-    element: <Login/>,
+    element: (
+      <>
+        <SideBar />
+        <Login />
+      </>
+    )
   },
   {
     path: "/Report",
-    element: <Report/>,
+    element: (
+      <>
+        <SideBar />
+        <Report />
+      </>
+    )
   },
   {
     path: "/Update",
-    element: <Update/>,
+    element: (
+      <>
+        <SideBar />
+        <Update />
+      </>
+    )
   }
 ]);
 
