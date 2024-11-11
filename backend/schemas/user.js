@@ -10,6 +10,14 @@ const userSchema = z.object({
   cpf: z.string().max(11),
 });
 
+const upUserSchema = userSchema.pick({
+  password: true,
+  email: true,
+  phone: true,
+  cep: true
+}).partial()
+
+
 const userUpdateSchema = userSchema.pick({
   fullName: true,
   password: true,

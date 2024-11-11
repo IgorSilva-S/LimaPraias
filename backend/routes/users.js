@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const userSchema = require('../schemas/user');
+const upUserSchema = require('../schemas/user');
+const validate = require('../middlewares/validate');
 
 const { PrismaClient } = require('@prisma/client')
 const bcrypt = require('bcrypt')
@@ -16,10 +18,7 @@ router.post('/register', async (req, res) => {
   
   // Validate the request body
   try {
-    console.log(req.body)
-    const parseData = 
-    
-    console.log(parseData)
+    const parseData = userSchema.parse(req.body);
     const isSameCpf = await prisma.user.findUnique({
       where: {
         cpf: parseData.cpf
@@ -49,33 +48,61 @@ router.post('/register', async (req, res) => {
 
     // Return the new user data in JSON format (without the password)
     const {password, ...withoutPassword} = newUser
-    res.status(201).json({"Novo cadastrado": withoutPassword})
+    return res.status(201).json({
+			success: true,
+			status: 201,
+			message: 'User created.',
+			data: {
+				user: newUser,
+			},
+		});
   } catch (error) {
     res.status(400).json({ error: error.message })
   }
 })
 
-router.patch('update/:id', async(req, res, next) => {
-  const userId = req.user.userId;
-  const payload = req.body;
+router.patch('/updateUser/:id', validate(upUserSchema), async (req, res) => {
+  try {
+    const userId = req.params.id
+    const newData = req.body
+    console.log(userId)
 
-  const user = await prisma.user.findUnique({
-    where: {id: userId},
-  })
+    //Get user Id
+    const user = await prisma.user.findUnique({
+      where: {
+        id: userId
+      }
+    })
 
-  if (!user) {
-    return res.status(404).json({ message: 'Not Found'})
+    //Verify if userId exists
+    if (!user) {
+      res.status(404).json({'Erro': 'O usuário requisitado não foi encontrado'})
+    }
+
+    //If user try to change password, hash it
+    if (newData.password) {
+      newData.password = await bcrypt.hash(newData.password, 10)
+    }
+
+    //Then, update the user data
+    const updatedUser = await prisma.user.update({
+			where: { id: userId },
+			data: { ...newData },
+		});
+
+    //Remove user password from the response
+    delete updatedUser.password;
+
+    //send success response
+		return res.status(200).json({
+			success: true,
+			status: 200,
+			message: 'User updated.',
+			data: { user: updatedUser },
+		});
+  } catch (error) {
+    res.status(400).json({'Erro': error})
   }
-
-  const updateUser = await prisma.user.update({
-    where: {id: userId},
-    data: { ...payload},
-  })
-
-  return res.status(200).json({
-    message: 'User Updated',
-    data: { user: updatedUser },
-  })
 })
 
 module.exports = router;
