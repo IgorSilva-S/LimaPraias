@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./update.css";
 
 const Update = () => {
+  useEffect(() => {
   document.getElementById("cpfInp").addEventListener("input", (caractere) => {
   var value = caractere.target.value;
   var cpfPattern = value
@@ -11,7 +12,7 @@ const Update = () => {
     .replace(/(\d{3})(\d)/, "$1-$2")
     .replace(/(-\d{2})\d+?$/, "$1");
   caractere.target.value = cpfPattern;
-  });
+  })})
   return (
     <>
       <main id="update">
@@ -24,20 +25,18 @@ const Update = () => {
         <div id="data">
           <div class="datas" id="oldData">
             <div class="objetos old" id="name">Nome: </div>
-            <div class="objetos old" id="lastName">Sobrenome: </div>
-            <div class="objetos old" id="zipcode">Cep: </div>
+            <div class="objetos old" id="password">Senha: </div>
             <div class="objetos old" id="email">Email: </div>
-            <div class="objetos old" id="number">Telefone: </div>
-            <div class="objetos old" id="gender">Gênero: </div>
+            <div class="objetos old" id="phoneNumber">Telefone: </div>
+            <div class="objetos old" id="zipcode">Cep: </div>
           </div>
           <div class="datas" id="newData">
             <form id="updateForm">
-              <input class="objetos new" type="text" id="nameInp" placeholder="Nome" />
-              <input class="objetos new" type="text" id="lastNameInp" placeholder="Sobrenome" />
-              <input class="objetos new" type="text" id="cepInp" placeholder="Cep" />
+              <input class="objetos new" type="text" id="nameInp" placeholder="Nome Completo" />
+              <input class="objetos new" type="text" id="passwordInp" placeholder="Senha" />
               <input class="objetos new" type="email" id="emailInp" placeholder="E-Mail" />
-              <input class="objetos new" type="phone" id="phoneInp" placeholder="Telefone" />
-              <input class="objetos new" type="text" id="genderInp" placeholder="Gênero" />
+              <input class="objetos new" type="phone" id="phoneNumberInp" placeholder="Telefone" />
+              <input class="objetos new" type="text" id="zipcodeInp" placeholder="Cep" />
             </form>
           </div>
         </div> 
