@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { userSchema, upUserSchema } = require('../schemas/user'); // Corrigido a importação
+const { userSchema, userUpdateSchema } = require('../schemas/user'); // Corrigido a importação
 const validate = require('../middlewares/validate');
 
 const { PrismaClient } = require('@prisma/client');
@@ -59,7 +59,7 @@ router.patch('/updateUser/:id', async (req, res) => {
   try {
     const userId = parseInt(req.params.id);
     
-    const newData = upUserSchema.parse(req.body);
+    const newData = userUpdateSchema.parse(req.body)
 
     // Get user Id
     const user = await prisma.user.findUnique({
@@ -104,7 +104,7 @@ router.patch('/updateUser/:id', async (req, res) => {
 router.delete('/deleteUser/:id', async (req, res) => {
   // Localize the user by Id and delete it
   try {
-    const userId = parseInt=(req.params.id);
+    const userId = parseInt(req.params.id);
 
     // Get user Id
     const user = await prisma.user.findUnique({
@@ -114,7 +114,7 @@ router.delete('/deleteUser/:id', async (req, res) => {
     });
 
     // Verify if userId exists
-    if (!userId) {
+    if (!user) {
       return res.status(404).json({'Erro': 'O usuário requisitado não foi encontrado'});
     }
 
@@ -147,6 +147,33 @@ router.get('/listUsers', async (req, res) => {
       data: { users },
     });
   } catch (error) {
+    res.status(400).json({'Erro': error});
+  }
+});
+
+// Router to list just one user
+router.get('/listUser', async (req, res) => {
+  try {
+    const body = userSchema.parse(req.body)
+    const cpf = body.cpf
+    const user = await prisma.user.findUnique({
+      where: {
+        cpf: cpf
+      }
+    });
+
+       // Verify if user exists
+      if (!user) {
+        return res.status(404).json({'Erro': 'O usuário requisitado não foi encontrado'});
+      }
+    return res.status(200).json({
+      success: true,
+      status: 200,
+      message: 'User listed.',
+      data: { user },
+    });
+  } catch (error) {
+    console.log(error)
     res.status(400).json({'Erro': error});
   }
 });

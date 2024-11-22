@@ -10,19 +10,6 @@ const userSchema = z.object({
   cpf: z.string().max(11).optional(),
 });
 
-const upUserSchema = userSchema.pick({
-  password: true,
-  email: true,
-  phone: true,
-  cep: true,
-  cpf: true,
-}).partial();
-
-module.exports = {
-  userSchema,
-  upUserSchema,
-};
-
 const userUpdateSchema = userSchema.pick({
   fullName: true,
   password: true,
@@ -30,15 +17,6 @@ const userUpdateSchema = userSchema.pick({
   phone: true,
   cep: true
 }).partial()
-
-
-const userUpdateSchema = userSchema.pick({
-  fullName: true,
-  password: true,
-  email: true,
-  phone: true,
-  cep: true
-}).partial();
 
 module.exports = {
   userSchema,
