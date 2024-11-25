@@ -1,0 +1,56 @@
+
+#logologin{
+  width: 28%;
+  margin-left: 35%;
+  margin-top: 22%;
+  margin-bottom: -6%;
+}
+
+#containertexto{
+  background-color: #faf0dc;
+  width: 45%;
+  height: 92%;
+  margin-left: 6%;
+  position: absolute;
+}
+
+#login{
+  background-color: #efb67f;
+  width: 96.5%;
+  height: 89vh;
+  border-top-right-radius: 30px;  
+  border-bottom-right-radius: 30px; 
+}
+
+#contentid{
+  position: relative;
+  left: 69.5%;
+  top: 30%;
+}
+
+#bemvindo{
+  margin-left: 15%;
+  margin-bottom: -6%;
+  font-family: sunborn;
+  font-size: 5vw;
+  color: #4e6a8f;
+  letter-spacing: 0.1vw;
+}
+
+#h1login{
+  font-family: sunborn;
+  font-size: 4vw;
+  color: #4e6a8f;
+  margin-bottom: -1vh;
+  letter-spacing: 0.1vw;
+}
+
+#mensagemlogin{
+  margin-left: 15.3%;
+  font-size: 1.3vw;
+  font-family: gilker;
+  color: #4e6a8f;
+  width: 70%;
+  letter-spacing: 0.1vw;
+}
+
