@@ -8,12 +8,12 @@
   top: 5vh;
   left: 0;
   border-radius: 0 16px 16px 0;
-  border-left: none;
   animation: slideAnim 1s ease-out;
   flex-direction: column;
   color: #4e6a8f;
   box-sizing: border-box;
   border: 7px solid #e1cb9c;
+  border-left: none;
   background-color: #f0dbb0;
   letter-spacing: 0.1vw;
 }
@@ -26,9 +26,8 @@
 .SearchSpace {
   background-color: #faf0dc;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 30px;
   margin: 10px auto;
-  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,6 +61,7 @@
 .form-rep input:focus {
   border: 3px solid #e1cb9c;
   outline: none;
+  color: #4e6a8f;
 }
 
 #searchButton {
@@ -79,6 +79,7 @@
   border: none;
   border-radius: 40px;
   padding: 12px;
+  cursor: pointer;
 }
 
 #searchButton img {

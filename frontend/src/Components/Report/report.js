@@ -1,10 +1,12 @@
 import React from "react";
 import "./report.css";
 import search from "../../assets/img/search-img.png";
+import SideBar from "../SideBar";
 
 const Report = () => {
     return (
       <main id="mainReport">
+        <SideBar/>
         <div className="title-rep">
           <h1>Procurar</h1>
         </div>
@@ -31,7 +33,7 @@ const Report = () => {
               <h3>Sobrenome: </h3>
               <h3>Email: </h3>
               <h3>Data de Nascimento: </h3>
-              <h3>Gênero: </h3>
+              <h3>Senha: </h3>
             </div>
           </div>
         </div>

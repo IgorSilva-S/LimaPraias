@@ -53,13 +53,13 @@
   gap: 10px;
 }
 
-#cpfInp {
+/* #cpfInp {
   width: 500px;
   border-radius: 25px;
   background-color: white;
   border: none;
   text-align: center;
-}
+} */
 
 #searchButton {
   cursor: pointer;

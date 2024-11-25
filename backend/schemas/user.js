@@ -18,5 +18,15 @@ const upUserSchema = userSchema.pick({
 }).partial()
 
 
-module.exports = userSchema;
-module.exports = upUserSchema;
+const userUpdateSchema = userSchema.pick({
+  fullName: true,
+  password: true,
+  email: true,
+  phone: true,
+  cep: true
+}).partial();
+
+module.exports = {
+  userSchema,
+  userUpdateSchema
+};
