@@ -1,14 +1,33 @@
+#mainReport {
+  width: 95vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  border-radius: 0 16px 16px 0;
+  animation: slideAnim 1s ease-out;
+  flex-direction: column;
+  color: #4e6a8f;
+  box-sizing: border-box;
+  border: 7px solid #e1cb9c;
+  border-left: none;
+  background-color: #f0dbb0;
+  letter-spacing: 0.1vw;
+}
 
-.title {
-    font-size: 23px;
+.title-rep {
+  font-size: 23px;
+  font-family: 'sunborn';
 }
 
 .SearchSpace {
   background-color: #faf0dc;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 30px;
   margin: 10px auto;
-  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,43 +35,55 @@
   padding: 50px;
 }
 
-/* form {
+.form-rep {
   display: flex;
   flex-direction: row;
   position: relative;
   align-items: center;
 }
 
-form h2 {
-    font-size: 28px;
+.form-rep h2 {
+  font-size: 28px;
+  font-family: 'sunborn';
 }
 
-input {
+.form-rep input {
   border: none;
   border-radius: 10px;
   padding: 6px;
-  font-family: 'Gliker';
+  font-family: 'gilker';
   margin-left: 10px;
   padding-left: 10px;
   width: 44vw;
   height: 40px;
 }
 
-input:focus {
-    border: 3px solid #e1cb9c;
-    outline: none;
-} */
+.form-rep input:focus {
+  border: 3px solid #e1cb9c;
+  outline: none;
+  color: #4e6a8f;
+}
 
-#searchButton button {
+#searchButton {
   border: none;
   font-size: 32px;
   border-radius: 50%;
-  background-color: white;
-  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: -15px;
+}
+
+#searchButton button {
+  background-color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+#searchButton img {
+  width: 2vw;
 }
 
 .responseContent {
@@ -62,18 +93,18 @@ input:focus {
   margin-top: 30px;
 }
 
-/* h3 {
+.responseContent h3 {
   background-color: #f0dbb0;
   margin: 8px;
   border-radius: 8px;
-  font-family: 'Gliker';
+  font-family: 'gilker';
   padding: 10px;
   width: 25vw;
   padding-left: 15px;
 } */
 
 .column1,
-.column2{
+.column2 {
   display: flex;
   flex-direction: column;
 }

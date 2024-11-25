@@ -1,18 +1,81 @@
-
-/* Aba criar */
-#create {
-  background-color: #FAF0DC;
-  border: 10px solid #DBCEB4;
-}
-
-#createForm {
+ /* #createForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   width: 50%;
   height: 30vh;
   position: relative;
-} 
+}   */
 
+#mainCreate {
+  width: 95vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  border-radius: 0 16px 16px 0;
+  animation: slideAnim 1s ease-out;
+  flex-direction: column;
+  color: #4e6a8f;
+  box-sizing: border-box;
+  border: 7px solid #dbceb4;
+  border-left: none;
+  letter-spacing: 0.1vw;
+}
 
+#title-create {
+  font-size: 23px;
+  font-family: 'sunborn';
+}
 
+.createForm {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.createForm input {
+  background-color: #f0dbb0;
+  border: none;
+  margin: 8px;
+  border-radius: 8px;
+  font-family: 'gilker';
+  padding: 12px;
+  width: 25vw;
+  padding-left: 15px;
+  color: #4e6a8f;
+}
+
+.createForm ::placeholder {
+  color: #4e6a8f;
+  font-size: 110%;
+}
+
+.createForm input:focus {
+  font-size: 90%;
+  
+}
+
+input:focus {
+  border: 2px solid #E1CB9C;
+}
+
+.column1-create,
+.column2-create {
+  display: flex;
+  flex-direction: column;
+}
+
+.Button-create {
+  background-color: #faf0dc;
+  border: 2px solid #4e6a8f;
+  border-radius: 8px;
+  font-family: 'gilker';
+  padding: 10px;
+  width: 20vw;
+  color: #4e6a8f;
+  margin-top: 35px;
+}

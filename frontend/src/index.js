@@ -16,7 +16,6 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <SideBar />
         <Login />
       </>
     )
@@ -25,7 +24,6 @@ const router = createBrowserRouter([
     path: "/Create",
     element: (
       <>
-        <SideBar />
         <Create />
       </>
     )
@@ -34,7 +32,6 @@ const router = createBrowserRouter([
     path: "/Delete",
     element: (
       <>
-        <SideBar />
         <Delete />
       </>
     )
@@ -43,7 +40,6 @@ const router = createBrowserRouter([
     path: "/Login",
     element: (
       <>
-        <SideBar />
         <Login />
       </>
     )
@@ -52,7 +48,6 @@ const router = createBrowserRouter([
     path: "/Report",
     element: (
       <>
-        <SideBar />
         <Report />
       </>
     )
@@ -61,7 +56,6 @@ const router = createBrowserRouter([
     path: "/Update",
     element: (
       <>
-        <SideBar />
         <Update />
       </>
     )
