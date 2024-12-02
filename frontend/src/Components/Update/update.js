@@ -2,17 +2,6 @@ import React, { useEffect } from "react";
 import "./update.css";
 
 const Update = () => {
-  useEffect(() => {
-  document.getElementById("cpfInp").addEventListener("input", (caractere) => {
-  var value = caractere.target.value;
-  var cpfPattern = value
-    .replace(/\D/g, "")
-    .replace(/(\d{3})(\d)/, "$1.$2")
-    .replace(/(\d{3})(\d)/, "$1.$2")
-    .replace(/(\d{3})(\d)/, "$1-$2")
-    .replace(/(-\d{2})\d+?$/, "$1");
-  caractere.target.value = cpfPattern;
-  })})
   return (
     <>
       <main id="update">

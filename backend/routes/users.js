@@ -152,10 +152,9 @@ router.get('/listUsers', async (req, res) => {
 });
 
 // Router to list just one user
-router.get('/listUser', async (req, res) => {
+router.get('/listUser/:cpf', async (req, res) => {
   try {
-    const body = userSchema.parse(req.body)
-    const cpf = body.cpf
+    const cpf = req.params.cpf;
     const user = await prisma.user.findUnique({
       where: {
         cpf: cpf
@@ -166,12 +165,7 @@ router.get('/listUser', async (req, res) => {
       if (!user) {
         return res.status(404).json({'Erro': 'O usuário requisitado não foi encontrado'});
       }
-    return res.status(200).json({
-      success: true,
-      status: 200,
-      message: 'User listed.',
-      data: { user },
-    });
+    return res.status(200).json({user});
   } catch (error) {
     console.log(error)
     res.status(400).json({'Erro': error});

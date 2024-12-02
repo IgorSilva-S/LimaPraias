@@ -2,31 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import './index.css';
-import App from './App';
 import Create from './Components/Create/create'
 import Delete from './Components/Delete/delete'
 import Login from './Components/Login/login'
 import Report from './Components/Report/report'
 import Update from './Components/Update/update'
-import ErrorPage from './Components/errorPage/errorPage'
-import SideBar from './Components/SideBar/index'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <>
-        <Login />
-      </>
-    )
+    element: (<><Login /></>)
   },
   {
     path: "/Create",
-    element: (
-      <>
-        <Create />
-      </>
-    )
+    element: (<><Create /></>)
   },
   {
     path: "/Delete",
