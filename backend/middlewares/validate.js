@@ -5,7 +5,7 @@ const validate = (schema) => {
 	return (req, res, next) => {
 		try {
 			// parse the request body against the schema
-			req.body = schema.parse(req.body);
+			req.body = JSON.parse(req.body);
 			return next();
 		} catch (err) {
 			// handle the error
