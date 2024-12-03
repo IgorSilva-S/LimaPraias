@@ -82,7 +82,7 @@ const Report = () => {
         <form action="" method="get" className="form-rep">
           <h2>CPF:</h2>
           <div id="searchBar">
-            <input type="text" name="cpf" id="cpf" required />
+            <input type="text" name="cpf" id="cpf" onInput={cpfOrder} required />
           </div>
           <div id="searchButton">
             <button>
