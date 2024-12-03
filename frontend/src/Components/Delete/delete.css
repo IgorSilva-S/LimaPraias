@@ -1,4 +1,4 @@
-
+/* 
 #Delete {
   width: 95vw;
   height: 90vh;
@@ -11,7 +11,127 @@
   background-color: #D99477;
   border: 6px solid #BF7D61;
   border-left: none;
-  /*animation: slideAnim 1s ease-out;*/
+  animation: slideAnim 1s ease-out;
   flex-direction: column;
+} */
+
+#mainDelete {
+  width: 95vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  border-radius: 0 16px 16px 0;
+  animation: slideAnim 1s ease-out;
+  flex-direction: column;
+  color: #faf0dc;
+  box-sizing: border-box;
+  border: 7px solid #bf7d61;
+  border-left: none;
+  letter-spacing: 0.1vw;
+  background-color: #d99477;
+  box-sizing: border-box;
 }
 
+.title-del {
+  font-size: 23px;
+  font-family: 'sunborn';
+  margin-bottom: -10px;
+}
+
+.SearchSpace-del {
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.SearchSpace-del h2 {
+  font-size: 28px;
+  font-family: 'sunborn';
+}
+
+.searchInp-del {
+  display: flex;
+  align-items: center;
+}
+
+.searchInp-del input {
+  border: none;
+  border-radius: 25px;
+  padding: 6px;
+  font-family: 'gilker';
+  margin-left: 10px;
+  padding-left: 10px;
+  width: 44vw;
+  height: 40px;
+  font-size: 18px;
+}
+
+.searchInp-del input:focus {
+  outline: none;
+  border: 3px solid #bf7d61;
+  color: #4e6a8f;
+}
+
+.searchButton-del {
+  border: none;
+  font-size: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 12px;
+  cursor: pointer;
+  margin-left: -33px;
+}
+
+.searchButton-del img {
+  width: 2vw;
+}
+
+.info-del {
+  display: flex;
+  flex-direction: row;
+  text-align: start;
+  margin-top: 20px;
+}
+
+.info-del p {
+  background-color: #faf0dc;
+  margin: 8px;
+  border-radius: 10px;
+  font-family: 'gilker';
+  height: 5vh;
+  width: 23vw;
+  padding-left: 15px;
+  color: #4e6a8f;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.botaoDeletar {
+  background-color: #d99477;
+  border: 2px solid #faf0dc;
+  border-radius: 10px;
+  font-family: 'gilker';
+  width: 20vw;
+  color: #faf0dc;
+  margin-top: 30px;
+  height: 5vh;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botaoDeletar:hover {
+  background-color: #bf7d61;
+}

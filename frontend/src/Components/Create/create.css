@@ -1,4 +1,4 @@
- /* #createForm {
+/* #createForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
@@ -43,24 +43,22 @@
   margin: 8px;
   border-radius: 8px;
   font-family: 'gilker';
-  padding: 12px;
   width: 25vw;
+  height: 5vh;
   padding-left: 15px;
   color: #4e6a8f;
+  box-sizing: border-box;
 }
 
 .createForm ::placeholder {
   color: #4e6a8f;
-  font-size: 110%;
+  font-size: 18px;
 }
 
 .createForm input:focus {
-  font-size: 90%;
-  
-}
-
-input:focus {
-  border: 2px solid #E1CB9C;
+  outline: none;
+  font-size: 18px;
+  border: 2px solid #e1cb9c;
 }
 
 .column1-create,
@@ -74,8 +72,15 @@ input:focus {
   border: 2px solid #4e6a8f;
   border-radius: 8px;
   font-family: 'gilker';
-  padding: 10px;
   width: 20vw;
   color: #4e6a8f;
   margin-top: 35px;
+  height: 5vh;
+  font-size: 18px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.Button-create:hover {
+  background-color: #f0dbb0;
 }

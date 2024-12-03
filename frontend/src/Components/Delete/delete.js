@@ -1,26 +1,31 @@
-import React from "react";
-import "./delete.css";
+import React from 'react';
+import './delete.css';
+import SideBar from '../SideBar';
+import search from '../../assets/img/search-imgdel.png';
 
 const Delete = () => {
   return (
     <>
-      <section id="Delete">
-        <h1>DELETAR CONTA</h1>
-        <div class="linhaPesquisa">
-          <h3>CPF:</h3>
-          <input type="text" />
-          <div id="lupa"><ion-icon name="search-outline"></ion-icon></div>
+      <main id="mainDelete">
+        <SideBar />
+        <div className="title-del">
+          <h1>DELETAR CONTA</h1>
         </div>
-        <div class="info">
-          <p>NOME:</p>
-          <p>SOBRENOME</p>
+        <div className="SearchSpace-del">
+          <h2>CPF:</h2>
+          <div className="searchInp-del">
+            <input type="text" name="cpf" id="cpf" required />
+            <button id="lupa" className="searchButton-del">
+              <img src={search} alt="searchButton" />
+            </button>
+          </div>
         </div>
-
-        <button class="botaoDeletar">DELETAR</button>
-      </section>
-
-      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <div class="info-del">
+          <p>Nome:</p>
+          <p>Sobrenome:</p>
+        </div>
+        <button className="botaoDeletar">DELETAR</button>
+      </main>
     </>
   );
 };
