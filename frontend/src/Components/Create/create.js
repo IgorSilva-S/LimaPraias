@@ -25,10 +25,10 @@ function cepForm(caractere) {
 function numForm(caractere) {
   var value = caractere.target.value;
   var numberPattern = value
-    .replace(/(\D{1})(\D)/g, '$1')
-    .toUpperCase()
-    .replace(/(\d{1})(\D)/g, '$1')
-    .replace(/(\d{5})\d+?$/, '$1');
+    .replace(/\D/g, "")
+    .replace(/(\d{2})(\d)/, "($1) $2")
+    .replace(/(\d{5})(\d)/, "$1-$2")
+    .replace(/(-\d{4})\d+?$/, "$1");
   caractere.target.value = numberPattern;
 }
 
@@ -43,6 +43,48 @@ function dateForm(caractere) {
 }
 
 export default function Create() {
+  async function createUser() {
+    // Pegando a resposta da API
+    const response = await fetch("http://localhost:3001/api/users/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fullName: `${document.getElementById("nameInp").value} ${document.getElementById("surName").value}`,
+        phone: `${document.getElementById("phoneInp").value}`,
+        email: `${document.getElementById("emailInp").value}`,
+        birthDate: `${document.getElementById("dateInp").value.split('/').reverse().join('-')}`,
+        cep: `${document.getElementById("cepInp").value.replace(/[^\d]/g, "")}`,
+        password: `${document.getElementById("passwordInp").value}`,
+        cpf: `${document.getElementById("cpfInp").value.replace(/[^\d]/g, "")}`,
+      }),
+    });
+
+    // Tratando a resposta
+    const responseJson = await response.json()
+    console.log(responseJson)
+    if (responseJson.length > 0) {
+      const formattedErrors = [];
+      let i = 0;
+      responseJson.forEach((erro) => {
+        console.log(erro.message)
+        formattedErrors[i] = `${erro.path} - ${erro.message} `;
+        i = i + 1
+      });
+      i = 0;
+      formattedErrors.forEach((erro) => {
+        alert(formattedErrors[i])
+        i = i + 1;
+      });
+    } else {
+      if (response.status === 201) {
+        alert("Usuário Criado com sucesso");
+      } else if (responseJson.error === 1) {
+        alert("Esse CPF ja foi cadastrado");
+      } else {
+        alert("Houve um erro interno, tente novamente mais tarde");
+      }
+    }
+  }
   return (
     <main id="mainCreate">
       <SideBar />
@@ -73,6 +115,7 @@ export default function Create() {
               type="phone"
               id="phoneInp"
               placeholder="Telefone:"
+              onInput={numForm}
               required
               autoComplete="off"
             />
@@ -89,16 +132,15 @@ export default function Create() {
           <div className="column2-create">
             <input
               type="text"
-              id="dateInp"
-              placeholder="Data de nascimento:"
+              id="surName"
+              placeholder="Sobrenome:"
               required
-              onInput={dateForm}
               autoComplete="off"
             />
 
             <input
               type="text"
-              id="genInp"
+              id="passwordInp"
               placeholder="Senha:"
               required
               autoComplete="off"
@@ -114,16 +156,21 @@ export default function Create() {
 
             <input
               type="text"
-              id="numberInp"
-              placeholder="Número da casa:"
-              onInput={numForm}
+              id="dateInp"
+              placeholder="Data de nascimento:"
+              onInput={dateForm}
               autoComplete="off"
             />
           </div>
         </div>
       </form>
 
-      <input type="submit" value="Criar usuário" className="Button-create" />
+      <input
+        onClick={createUser}
+        type="submit"
+        value="Criar usuário"
+        className="Button-create"
+      />
     </main>
   );
 }
