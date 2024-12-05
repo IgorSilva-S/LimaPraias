@@ -16,8 +16,6 @@ router.get('/', function(req, res, next) {
 router.post('/register', async (req, res) => {
   try {
     const parseData = userSchema.parse(req.body);
-
-    // Check if user already exists
     const userExists = await prisma.user.findUnique({
       where: {
         cpf: parseData.cpf
@@ -26,7 +24,7 @@ router.post('/register', async (req, res) => {
 
     if (userExists) {
       return res.status(400).json({
-        error: 'CPF já cadastrado.'
+        error: 1
       });
     }
 
@@ -55,22 +53,22 @@ router.post('/register', async (req, res) => {
 });
 
 // Router for update user
-router.patch('/updateUser/:id', async (req, res) => {
+router.patch('/updateUser/:cpf', async (req, res) => {
   try {
-    const userId = parseInt(req.params.id);
+    const {cpf} = req.params;
     
     const newData = userUpdateSchema.parse(req.body)
 
     // Get user Id
     const user = await prisma.user.findUnique({
       where: {
-        id: userId
+        cpf: cpf
       }
     });
 
     // Verify if userId exists
     if (!user) {
-      return res.status(404).json({'Erro': 'O usuário requisitado não foi encontrado'});
+      return res.status(404).json({ Erro: 'O usuário requisitado não foi encontrado' });
     }
 
     // If user try to change password, hash it
@@ -80,7 +78,7 @@ router.patch('/updateUser/:id', async (req, res) => {
 
     // Then, update the user data
     const updatedUser = await prisma.user.update({
-      where: { id: userId },
+      where: { cpf: cpf },
       data: { ...newData },
     });
 
@@ -89,8 +87,6 @@ router.patch('/updateUser/:id', async (req, res) => {
 
     // Send success response
     return res.status(200).json({
-      success: true,
-      status: 200,
       message: 'User updated.',
       data: { user: updatedUser },
     });
@@ -101,16 +97,15 @@ router.patch('/updateUser/:id', async (req, res) => {
 });
 
 // Delete user
-router.delete('/deleteUser/:id', async (req, res) => {
+router.delete('/deleteUser/:cpf', async (req, res) => {
   // Localize the user by Id and delete it
   try {
-    const userId = parseInt(req.params.id);
-
+    const {cpf} = req.params;
     // Get user Id
     const user = await prisma.user.findUnique({
       where: {
-        id: userId
-      }                                                                                                                                            
+        cpf: cpf,
+      },
     });
 
     // Verify if userId exists
@@ -121,8 +116,8 @@ router.delete('/deleteUser/:id', async (req, res) => {
     // Delete user
     await prisma.user.delete({
       where: {
-        id: userId
-      }
+        cpf: cpf,
+      },
     });
 
     // Send success response
@@ -132,6 +127,7 @@ router.delete('/deleteUser/:id', async (req, res) => {
       message: 'User deleted.',
     });
   } catch (error) {
+    console.log(error)
     res.status(400).json({'Erro': error});
   }
 });
