@@ -36,39 +36,41 @@ const Report = () => {
   return (
     <main id="mainReport">
       <SideBar />
-      <div className="title-rep">
-        <h1>Procurar</h1>
-      </div>
-      <div className="SearchSpace">
-        <form action="" method="get" className="form-rep">
-          <h2>CPF:</h2>
-          <div id="searchBar">
-            <input
-              type="text"
-              name="cpf"
-              id="cpf"
-              onInput={cpfOrder}
-              required
-            />
-          </div>
-          <div id="searchButton">
-            <button onClick={searchUser}>
-              <img src={search} alt="searchButton" />
-            </button>
-          </div>
-        </form>
-        <div className="responseContent">
-          <div className="column1">
-            <p id="nameOut">Nome: </p>
-            <p id="cpfOut">CPF: </p>
-            <p id="phoneOut">Telefone: </p>
-            <p id="cepOut">CEP: </p>
-          </div>
-          <div className="column2">
-            <p id="surNameOut">Sobrenome: </p>
-            <p id="emailOut">Email: </p>
-            <p id="birthDateOut">Data de Nascimento: </p>
-            <p id="passwordOut">Senha: </p>
+      <div id="animation">
+        <div className="title-rep">
+          <h1>Procurar</h1>
+        </div>
+        <div className="SearchSpace">
+          <form action="" method="get" className="form-rep">
+            <h2>CPF:</h2>
+            <div id="searchBar">
+              <input
+                type="text"
+                name="cpf"
+                id="cpf"
+                onInput={cpfOrder}
+                required
+              />
+            </div>
+            <div id="searchButton">
+              <button onClick={searchUser}>
+                <img src={search} alt="searchButton" />
+              </button>
+            </div>
+          </form>
+          <div className="responseContent">
+            <div className="column1">
+              <p id="nameOut">Nome: </p>
+              <p id="cpfOut">CPF: </p>
+              <p id="phoneOut">Telefone: </p>
+              <p id="cepOut">CEP: </p>
+            </div>
+            <div className="column2">
+              <p id="surNameOut">Sobrenome: </p>
+              <p id="emailOut">Email: </p>
+              <p id="birthDateOut">Data de Nascimento: </p>
+              <p id="passwordOut">Senha: </p>
+            </div>
           </div>
         </div>
       </div>

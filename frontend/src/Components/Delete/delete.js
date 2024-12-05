@@ -42,23 +42,31 @@ const Delete = () => {
     <>
       <main id="mainDelete">
         <SideBar />
-        <div className="title-del">
-          <h1>DELETAR CONTA</h1>
-        </div>
-        <div className="SearchSpace-del">
-          <h2>CPF:</h2>
-          <div className="searchInp-del">
-            <input type="text" name="cpf" id="cpf" required />
-            <button onClick={searchUser} id="lupa" className="searchButton-del">
-              <img src={search} alt="searchButton" />
-            </button>
+        <div id="animation">
+          <div className="title-del">
+            <h1>DELETAR CONTA</h1>
           </div>
+          <div className="SearchSpace-del">
+            <h2>CPF:</h2>
+            <div className="searchInp-del">
+              <input type="text" name="cpf" id="cpf" required />
+              <button
+                onClick={searchUser}
+                id="lupa"
+                className="searchButton-del"
+              >
+                <img src={search} alt="searchButton" />
+              </button>
+            </div>
+          </div>
+          <div class="info-del">
+            <p id="nameOut">Nome:</p>
+            <p id="surNameOut">Sobrenome:</p>
+          </div>
+          <button onClick={deleteUser} className="botaoDeletar">
+            DELETAR
+          </button>
         </div>
-        <div class="info-del">
-          <p id="nameOut">Nome:</p>
-          <p id="surNameOut">Sobrenome:</p>
-        </div>
-        <button onClick={deleteUser} className="botaoDeletar">DELETAR</button>
       </main>
     </>
   );

@@ -8,7 +8,6 @@
   top: 5vh;
   left: 0;
   border-radius: 0 16px 16px 0;
-  animation: slideAnim 1s ease-out;
   flex-direction: column;
   color: #4e6a8f;
   box-sizing: border-box;

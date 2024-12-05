@@ -18,6 +18,8 @@ export default function Login() {
     event.preventDefault();
     if (document.getElementById("email").value === "admin@admin" && document.getElementById("password").value === "admin") {
       navigate("/create");
+    } else {
+      alert('Email ou senha incorretos!')
     }
   }
   return (

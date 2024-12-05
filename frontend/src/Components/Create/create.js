@@ -88,89 +88,91 @@ export default function Create() {
   return (
     <main id="mainCreate">
       <SideBar />
-      <div id="title-create">
-        <h1>Criar Usuário</h1>
-      </div>
-
-      <form id="createForm" action="">
-        <div className="createForm">
-          <div className="column1-create">
-            <input
-              type="text"
-              id="nameInp"
-              placeholder="Nome:"
-              required
-              autoComplete="off"
-            />
-
-            <input
-              type="email"
-              id="emailInp"
-              placeholder="E-Mail:"
-              required
-              autoComplete="off"
-            />
-
-            <input
-              type="phone"
-              id="phoneInp"
-              placeholder="Telefone:"
-              onInput={numForm}
-              required
-              autoComplete="off"
-            />
-
-            <input
-              type="text"
-              id="cpfInp"
-              placeholder="CPF:"
-              onInput={cpfOrder}
-              autoComplete="off"
-            />
-          </div>
-
-          <div className="column2-create">
-            <input
-              type="text"
-              id="surName"
-              placeholder="Sobrenome:"
-              required
-              autoComplete="off"
-            />
-
-            <input
-              type="text"
-              id="passwordInp"
-              placeholder="Senha:"
-              required
-              autoComplete="off"
-            />
-
-            <input
-              type="text"
-              id="cepInp"
-              placeholder="CEP:"
-              onInput={cepForm}
-              autoComplete="off"
-            />
-
-            <input
-              type="text"
-              id="dateInp"
-              placeholder="Data de nascimento:"
-              onInput={dateForm}
-              autoComplete="off"
-            />
-          </div>
+      <div id="animation">
+        <div id="title-create">
+          <h1>Criar Usuário</h1>
         </div>
-      </form>
 
-      <input
-        onClick={createUser}
-        type="submit"
-        value="Criar usuário"
-        className="Button-create"
-      />
+        <form id="createForm" action="">
+          <div className="createForm">
+            <div className="column1-create">
+              <input
+                type="text"
+                id="nameInp"
+                placeholder="Nome:"
+                required
+                autoComplete="off"
+              />
+
+              <input
+                type="email"
+                id="emailInp"
+                placeholder="E-Mail:"
+                required
+                autoComplete="off"
+              />
+
+              <input
+                type="phone"
+                id="phoneInp"
+                placeholder="Telefone:"
+                onInput={numForm}
+                required
+                autoComplete="off"
+              />
+
+              <input
+                type="text"
+                id="cpfInp"
+                placeholder="CPF:"
+                onInput={cpfOrder}
+                autoComplete="off"
+              />
+            </div>
+
+            <div className="column2-create">
+              <input
+                type="text"
+                id="surName"
+                placeholder="Sobrenome:"
+                required
+                autoComplete="off"
+              />
+
+              <input
+                type="text"
+                id="passwordInp"
+                placeholder="Senha:"
+                required
+                autoComplete="off"
+              />
+
+              <input
+                type="text"
+                id="cepInp"
+                placeholder="CEP:"
+                onInput={cepForm}
+                autoComplete="off"
+              />
+
+              <input
+                type="text"
+                id="dateInp"
+                placeholder="Data de nascimento:"
+                onInput={dateForm}
+                autoComplete="off"
+              />
+            </div>
+          </div>
+        </form>
+
+        <input
+          onClick={createUser}
+          type="submit"
+          value="Criar usuário"
+          className="Button-create"
+        />
+      </div>
     </main>
   );
 }
